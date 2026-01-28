@@ -1,0 +1,222 @@
+2026-01-28 17:57:55,711 - INFO - === Starting Integrated SAE Analysis Pipeline ===
+2026-01-28 17:57:55,711 - INFO - Output Directory: /experiment/SAE/analysis/results/20260128_175755
+2026-01-28 17:57:55,778 - INFO - Auto-detected GPU 0 with 80992 MiB free.
+2026-01-28 17:57:55,779 - INFO - Loading Wikitext for functional verification...
+2026-01-28 17:57:59,415 - INFO - 
+>>> Analyzing Family: google_gemma-3-1b-it
+2026-01-28 17:57:59,415 - INFO -   [Step 1] Geometric Metrics...
+2026-01-28 17:58:16,036 - INFO -   [Step 2] Functional Verification...
+2026-01-28 17:58:16,036 - INFO - 
+2026-01-28 17:58:16,036 - INFO -     ┌─ BASELINE (bfloat16) ─────────────────────────────
+2026-01-28 17:58:16,036 - INFO -     │ Model: /experiment/models/google_gemma-3-1b-it/bfloat16
+2026-01-28 17:58:16,037 - INFO -     │ SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_bfloat16_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 17:58:16,037 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 17:58:54,136 - INFO - 
+2026-01-28 17:58:54,137 - INFO -   > Verifying: bfloat16 vs gptq
+2026-01-28 17:58:54,137 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 17:58:54,137 - INFO -     │ BASE:
+2026-01-28 17:58:54,137 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/bfloat16
+2026-01-28 17:58:54,137 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_bfloat16_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 17:58:54,137 - INFO -     │ TARGET (gptq):
+2026-01-28 17:58:54,137 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/gptq
+2026-01-28 17:58:54,137 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_gptq_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 17:58:54,137 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 17:58:54,137 - INFO -     Loading target model...
+2026-01-28 17:59:32,314 - INFO -     Loading target SAE...
+2026-01-28 17:59:32,664 - INFO -     Running functional eval...
+2026-01-28 17:59:53,863 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 17:59:53,864 - INFO -     │ Jaccard:  0.1457
+2026-01-28 17:59:53,864 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 17:59:53,864 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 17:59:53,864 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 17:59:53,901 - INFO -     Model Activation Correlation: 0.1017 (layer 19)
+2026-01-28 17:59:54,323 - INFO - 
+2026-01-28 17:59:54,324 - INFO -   > Verifying: bfloat16 vs hqq
+2026-01-28 17:59:54,326 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 17:59:54,327 - INFO -     │ BASE:
+2026-01-28 17:59:54,328 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/bfloat16
+2026-01-28 17:59:54,328 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_bfloat16_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 17:59:54,328 - INFO -     │ TARGET (hqq):
+2026-01-28 17:59:54,328 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/hqq
+2026-01-28 17:59:54,328 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_hqq_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 17:59:54,328 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 17:59:54,329 - INFO -     Loading target model...
+2026-01-28 18:00:38,061 - INFO -     Loading target SAE...
+2026-01-28 18:00:38,274 - INFO -     Running functional eval...
+2026-01-28 18:00:58,209 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:00:58,209 - INFO -     │ Jaccard:  0.1397
+2026-01-28 18:00:58,209 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:00:58,210 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:00:58,210 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:00:58,244 - INFO -     Model Activation Correlation: 0.1038 (layer 19)
+2026-01-28 18:00:58,564 - INFO - 
+2026-01-28 18:00:58,564 - INFO -   > Verifying: bfloat16 vs int4
+2026-01-28 18:00:58,564 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 18:00:58,565 - INFO -     │ BASE:
+2026-01-28 18:00:58,565 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/bfloat16
+2026-01-28 18:00:58,565 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_bfloat16_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 18:00:58,565 - INFO -     │ TARGET (int4):
+2026-01-28 18:00:58,565 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/int4
+2026-01-28 18:00:58,565 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_int4_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 18:00:58,565 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:00:58,565 - INFO -     Loading target model...
+2026-01-28 18:01:33,779 - INFO -     Loading target SAE...
+2026-01-28 18:01:33,949 - INFO -     Running functional eval...
+2026-01-28 18:01:52,819 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:01:52,820 - INFO -     │ Jaccard:  0.1422
+2026-01-28 18:01:52,820 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:01:52,820 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:01:52,820 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:01:52,853 - INFO -     Model Activation Correlation: 0.1100 (layer 19)
+2026-01-28 18:01:53,271 - INFO - 
+2026-01-28 18:01:53,271 - INFO -   > Verifying: bfloat16 vs fp8
+2026-01-28 18:01:53,271 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 18:01:53,271 - INFO -     │ BASE:
+2026-01-28 18:01:53,271 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/bfloat16
+2026-01-28 18:01:53,271 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_bfloat16_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 18:01:53,271 - INFO -     │ TARGET (fp8):
+2026-01-28 18:01:53,271 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/fp8
+2026-01-28 18:01:53,271 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_fp8_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 18:01:53,272 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:01:53,272 - INFO -     Loading target model...
+2026-01-28 18:02:28,085 - INFO -     Loading target SAE...
+2026-01-28 18:02:28,191 - INFO -     Running functional eval...
+2026-01-28 18:02:47,271 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:02:47,271 - INFO -     │ Jaccard:  0.1350
+2026-01-28 18:02:47,271 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:02:47,271 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:02:47,271 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:02:47,304 - INFO -     Model Activation Correlation: 0.1028 (layer 19)
+2026-01-28 18:02:47,603 - INFO - 
+2026-01-28 18:02:47,604 - INFO -   > Verifying: bfloat16 vs awq
+2026-01-28 18:02:47,605 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 18:02:47,605 - INFO -     │ BASE:
+2026-01-28 18:02:47,605 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/bfloat16
+2026-01-28 18:02:47,605 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it_bfloat16_sae_gemma3-1b/checkpoint_244000.pt
+2026-01-28 18:02:47,605 - INFO -     │ TARGET (awq):
+2026-01-28 18:02:47,605 - INFO -     │   Model: /experiment/models/google_gemma-3-1b-it/awq
+2026-01-28 18:02:47,605 - INFO -     │   SAE:   /experiment/SAE/checkpoints/google_gemma-3-1b-it-awq_sae_gemma3-1b/edw6gsei/final_1000001536
+2026-01-28 18:02:47,605 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:02:47,606 - INFO -     Loading target model...
+2026-01-28 18:03:23,950 - INFO -     Loading target SAE...
+2026-01-28 18:03:24,048 - INFO -     Running functional eval...
+2026-01-28 18:03:43,213 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:03:43,214 - INFO -     │ Jaccard:  0.0242
+2026-01-28 18:03:43,214 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:03:43,214 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:03:43,214 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:03:43,248 - INFO -     Model Activation Correlation: 0.0883 (layer 19)
+2026-01-28 18:03:47,105 - INFO - 
+>>> Analyzing Family: DeepSeek-R1-1.5b
+2026-01-28 18:03:47,105 - INFO -   [Step 1] Geometric Metrics...
+2026-01-28 18:04:29,151 - INFO -   [Step 2] Functional Verification...
+2026-01-28 18:04:29,153 - INFO -     Resolved family 'DeepSeek-R1-1.5b' to 'deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B'
+2026-01-28 18:04:29,153 - INFO - 
+2026-01-28 18:04:29,153 - INFO -     ┌─ BASELINE (bfloat16) ─────────────────────────────
+2026-01-28 18:04:29,153 - INFO -     │ Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/bfloat16
+2026-01-28 18:04:29,153 - INFO -     │ SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-bfloat16/qg701fza/final_1000001536
+2026-01-28 18:04:29,153 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:05:14,429 - INFO - 
+2026-01-28 18:05:14,430 - INFO -   > Verifying: bfloat16 vs awq
+2026-01-28 18:05:14,430 - INFO -     Resolved family 'DeepSeek-R1-1.5b' to 'deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B'
+2026-01-28 18:05:14,430 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 18:05:14,430 - INFO -     │ BASE:
+2026-01-28 18:05:14,430 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/bfloat16
+2026-01-28 18:05:14,430 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-bfloat16/qg701fza/final_1000001536
+2026-01-28 18:05:14,430 - INFO -     │ TARGET (awq):
+2026-01-28 18:05:14,430 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/awq
+2026-01-28 18:05:14,430 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-awq/cn77lh97/final_1000001536
+2026-01-28 18:05:14,430 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:05:14,431 - INFO -     Loading target model...
+2026-01-28 18:05:58,306 - INFO -     Loading target SAE...
+2026-01-28 18:05:58,494 - INFO -     Running functional eval...
+2026-01-28 18:06:25,756 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:06:25,756 - INFO -     │ Jaccard:  0.0481
+2026-01-28 18:06:25,756 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:06:25,756 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:06:25,756 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:06:25,798 - INFO -     Model Activation Correlation: 0.9979 (layer 21)
+2026-01-28 18:06:26,218 - INFO - 
+2026-01-28 18:06:26,218 - INFO -   > Verifying: bfloat16 vs int4
+2026-01-28 18:06:26,219 - INFO -     Resolved family 'DeepSeek-R1-1.5b' to 'deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B'
+2026-01-28 18:06:26,219 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 18:06:26,219 - INFO -     │ BASE:
+2026-01-28 18:06:26,219 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/bfloat16
+2026-01-28 18:06:26,219 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-bfloat16/qg701fza/final_1000001536
+2026-01-28 18:06:26,219 - INFO -     │ TARGET (int4):
+2026-01-28 18:06:26,219 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/int4
+2026-01-28 18:06:26,219 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-int4/kml1g95b/final_1000001536
+2026-01-28 18:06:26,219 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:06:26,219 - INFO -     Loading target model...
+2026-01-28 18:07:11,031 - INFO -     Loading target SAE...
+2026-01-28 18:07:11,213 - INFO -     Running functional eval...
+2026-01-28 18:07:37,561 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:07:37,561 - INFO -     │ Jaccard:  0.0412
+2026-01-28 18:07:37,561 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:07:37,561 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:07:37,561 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:07:37,602 - INFO -     Model Activation Correlation: 0.9960 (layer 21)
+2026-01-28 18:07:37,987 - INFO - 
+2026-01-28 18:07:37,988 - INFO -   > Verifying: bfloat16 vs fp8
+2026-01-28 18:07:37,988 - INFO -     Resolved family 'DeepSeek-R1-1.5b' to 'deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B'
+2026-01-28 18:07:37,988 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 18:07:37,988 - INFO -     │ BASE:
+2026-01-28 18:07:37,988 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/bfloat16
+2026-01-28 18:07:37,988 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-bfloat16/qg701fza/final_1000001536
+2026-01-28 18:07:37,988 - INFO -     │ TARGET (fp8):
+2026-01-28 18:07:37,988 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/fp8
+2026-01-28 18:07:37,989 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-fp8/e1yu9tbs/final_1000001536
+2026-01-28 18:07:37,989 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:07:37,989 - INFO -     Loading target model...
+2026-01-28 18:08:22,863 - INFO -     Loading target SAE...
+2026-01-28 18:08:23,059 - INFO -     Running functional eval...
+2026-01-28 18:08:49,887 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:08:49,888 - INFO -     │ Jaccard:  0.0450
+2026-01-28 18:08:49,888 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:08:49,888 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:08:49,888 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:08:49,930 - INFO -     Model Activation Correlation: 0.9997 (layer 21)
+2026-01-28 18:08:50,309 - INFO - 
+2026-01-28 18:08:50,309 - INFO -   > Verifying: bfloat16 vs gptq
+2026-01-28 18:08:50,310 - INFO -     Resolved family 'DeepSeek-R1-1.5b' to 'deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B'
+2026-01-28 18:08:50,310 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 18:08:50,310 - INFO -     │ BASE:
+2026-01-28 18:08:50,310 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/bfloat16
+2026-01-28 18:08:50,310 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-bfloat16/qg701fza/final_1000001536
+2026-01-28 18:08:50,310 - INFO -     │ TARGET (gptq):
+2026-01-28 18:08:50,310 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/gptq
+2026-01-28 18:08:50,310 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-gptq/ze32gkvn/final_1000001536
+2026-01-28 18:08:50,310 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:08:50,310 - INFO -     Loading target model...
+2026-01-28 18:09:35,181 - INFO -     Loading target SAE...
+2026-01-28 18:09:35,384 - INFO -     Running functional eval...
+2026-01-28 18:10:02,809 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:10:02,809 - INFO -     │ Jaccard:  0.0471
+2026-01-28 18:10:02,809 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:10:02,809 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:10:02,809 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:10:02,849 - INFO -     Model Activation Correlation: 0.9977 (layer 21)
+2026-01-28 18:10:03,208 - INFO - 
+2026-01-28 18:10:03,208 - INFO -   > Verifying: bfloat16 vs hqq
+2026-01-28 18:10:03,209 - INFO -     Resolved family 'DeepSeek-R1-1.5b' to 'deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B'
+2026-01-28 18:10:03,209 - INFO -     ┌─ COMPARISON ──────────────────────────────────────────
+2026-01-28 18:10:03,209 - INFO -     │ BASE:
+2026-01-28 18:10:03,209 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/bfloat16
+2026-01-28 18:10:03,209 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-bfloat16/qg701fza/final_1000001536
+2026-01-28 18:10:03,209 - INFO -     │ TARGET (hqq):
+2026-01-28 18:10:03,209 - INFO -     │   Model: /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B/hqq
+2026-01-28 18:10:03,209 - INFO -     │   SAE:   /experiment/SAE/checkpoints/DeepSeek-R1-1.5b-hqq/ppn2uiho/final_1000001536
+2026-01-28 18:10:03,209 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:10:03,209 - INFO -     Loading target model...
+2026-01-28 18:10:55,932 - INFO -     Loading target SAE...
+2026-01-28 18:10:56,101 - INFO -     Running functional eval...
+2026-01-28 18:11:22,198 - INFO -     ┌─ RESULT ───────────────────────────────────────────────
+2026-01-28 18:11:22,198 - INFO -     │ Jaccard:  0.0447
+2026-01-28 18:11:22,198 - INFO -     │ L0 Base:  32.00  |  L0 Target: 32.00
+2026-01-28 18:11:22,198 - INFO -     │ L0 Ratio: 1.0000
+2026-01-28 18:11:22,198 - INFO -     └────────────────────────────────────────────────────────
+2026-01-28 18:11:22,238 - INFO -     Model Activation Correlation: 0.9956 (layer 21)
+2026-01-28 18:11:26,129 - INFO - 
+=== Finalizing Global Statistics ===
+2026-01-28 18:11:27,800 - INFO - 
+Pipeline Complete. Log saved to: /experiment/SAE/analysis/results/20260128_175755/analysis_log.txt

@@ -1,0 +1,45 @@
+models:
+  - /experiment/models/deepseek-ai_DeepSeek-R1-Distill-Qwen-1.5B
+methods:
+  - bfloat16
+  - fp8
+  - int4
+  - awq
+  - gptq
+  - hqq
+# layer_index: 20 # Fallback
+layer_relative: 0.75 # Target 75% depth 
+activation_site: "resid_post"
+
+dataset:
+  name: "fineweb-edu"
+  path: "HuggingFaceFW/fineweb-edu"
+  subset: "sample-10BT"
+  num_tokens: 1_000_000_000
+  batch_size: 4096 
+  llm_batch_size: 4
+  seed: 42
+
+sae:
+  architecture: "matryoshka"
+  expansion_factor: 16 # Dynamic expansion based on d_model
+  # total_dict_size: 18432 # Fallback
+  
+  nested_groups: 4
+  group_fractions: [0.0625, 0.125, 0.25, 0.5625]
+  
+  activation_fn: "batchtopk"
+  sparsity_k: 32
+  
+  learning_rate: 0.0003
+  warmup_steps: 1000 # Increased for 1B tokens
+  weight_decay: 0.01
+  
+  reconstruction_weight: 1.0
+
+wandb:
+  project: "matryoshka-sae-quantization"
+  entity: null
+  tags: ["matryoshka", "interpretability", "quantization", "DeepSeek-R1-1.5b-production"]
+  log_interval: 100
+  run_label: "DeepSeek-R1-1.5b"

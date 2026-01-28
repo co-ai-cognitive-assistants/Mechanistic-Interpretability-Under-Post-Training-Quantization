@@ -1,0 +1,12 @@
+torch
+numpy
+transformers
+datasets
+wandb
+pyyaml
+accelerate
+einops
+autoawq
+auto-gptq
+sae-lens
+transformer-lens

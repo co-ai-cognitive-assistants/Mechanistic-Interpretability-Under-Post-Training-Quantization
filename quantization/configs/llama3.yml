@@ -1,0 +1,6 @@
+repo_ids:
+  - "meta-llama/Llama-3.1-8B-Instruct"
+
+methods:
+  - awq
+override: true

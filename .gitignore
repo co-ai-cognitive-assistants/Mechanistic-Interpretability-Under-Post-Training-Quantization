@@ -1,0 +1,16 @@
+models/*
+quantization/methods/__pycache__/*
+quantization/sparse_logs/*
+wandb/*
+host_hardware_fixes/*
+SAE/wandb/*
+SAE/__pycache__/*
+SAE/checkpoints/*
+*.models
+
+basic_interpretability/__pycache__/*
+lm_eval/__pycache__/*
+*.log
+quantization/__pycache__/*
+**/__pycache__/
+.claude/*
